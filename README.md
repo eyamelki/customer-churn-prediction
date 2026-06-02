@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
   <img src="https://img.shields.io/badge/scikit--learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white"/>
   <img src="https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
 </p>
 
@@ -35,7 +36,7 @@
 The application covers the full ML lifecycle:
 
 - 📊 **Data Analysis & Preprocessing** — Kaggle telecom dataset (7043 records, 21 features)
-- 🤖 **Model Training & Evaluation** — Logistic Regression, KNN, Random Forest
+- 🤖 **Model Training & Evaluation** — Trained on Google Colab (Logistic Regression, KNN, Random Forest)
 - 🌐 **REST API Deployment** — Flask backend exposing a `/predict` endpoint
 - 💻 **Interactive Web App** — React + Tailwind CSS frontend for real-time predictions
 
@@ -69,6 +70,13 @@ The application covers the full ML lifecycle:
 │  │  (LogReg)   │  │ .joblib  │  │   .json       │  │
 │  └─────────────┘  └──────────┘  └───────────────┘  │
 └─────────────────────────────────────────────────────┘
+         ▲
+         │ Model trained & exported from
+┌────────┴────────┐
+│  Google Colab   │
+│ churn_model     │
+│   .ipynb        │
+└─────────────────┘
 ```
 
 ---
@@ -79,6 +87,7 @@ The application covers the full ML lifecycle:
 
 | Property | Value |
 |----------|-------|
+| File | `WA_Fn-UseC_-Telco-Customer-Churn.csv` |
 | Records | 7 043 customers |
 | Features | 21 columns |
 | Target variable | `Churn` (Yes / No) |
@@ -98,6 +107,8 @@ The application covers the full ML lifecycle:
 
 ## ⚙️ Machine Learning Pipeline
 
+> 🔬 Full pipeline available in `backend/churn_model.ipynb` (Google Colab)
+
 ### 1. Data Preprocessing
 - Converted `TotalCharges` from object → numeric
 - Converted `SeniorCitizen` to boolean
@@ -111,7 +122,7 @@ The application covers the full ML lifecycle:
 - **StandardScaler** applied for scale-sensitive models
 - Three models trained and compared
 
-### 3. Most Influential Features (from analysis)
+### 3. Most Influential Features
 `tenure` · `Contract type` · `InternetService (Fiber optic)` · `MonthlyCharges` · `OnlineSecurity` · `TechSupport` · `PaymentMethod (Electronic check)`
 
 ---
@@ -146,24 +157,25 @@ Actual Churn           190                  184
 customer-churn-prediction/
 │
 ├── 📂 backend/
-│   ├── app.py                  # Flask API (health + predict endpoints)
-│   ├── model.pkl               # Trained Logistic Regression model
-│   ├── scaler.joblib           # StandardScaler for input normalization
-│   ├── feature_names.json      # Ordered list of expected features
-│   └── requirements.txt        # Python dependencies
+│   ├── app.py                        # Flask API (health + predict endpoints)
+│   ├── churn_model.ipynb             # Google Colab notebook (EDA → Training → Export)
+│   ├── model.pkl                     # Trained Logistic Regression model
+│   ├── scaler.joblib                 # StandardScaler for input normalization
+│   ├── feature_names.json            # Ordered list of expected features
+│   ├── requirements.txt              # Python dependencies
+│   └── WA_Fn-UseC_-Telco-Customer-Churn.csv   # Dataset
 │
 ├── 📂 frontend/
 │   ├── src/
-│   │   ├── App.tsx             # Main React component
-│   │   ├── main.tsx            # Entry point
-│   │   └── App.css             # Styles
+│   │   ├── App.tsx                   # Main React component
+│   │   ├── main.tsx                  # Entry point
+│   │   └── App.css                   # Styles
+│   ├── public/
 │   ├── index.html
 │   ├── package.json
 │   ├── vite.config.ts
-│   └── tsconfig.json
-│
-├── 📂 notebook/
-│   └── churn_model.ipynb       # Full ML pipeline (EDA → Training → Export)
+│   ├── tsconfig.json
+│   └── tsconfig.app.json
 │
 ├── .gitignore
 └── README.md
@@ -251,7 +263,6 @@ Predicts churn probability for a given customer.
     "InternetService_Fiber optic": 1,
     "Contract_Two year": 0,
     "PaymentMethod_Electronic check": 1
-    // ... other features
   }
 }
 ```
@@ -277,7 +288,6 @@ Predicts churn probability for a given customer.
 
 ## 👩‍💻 Author
 
-**Eya Melki** 
-<p align="center">
+**Eya Melki**
   Made with ❤️ · <strong>ChurnScope</strong> · 2025–2026
 </p>
