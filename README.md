@@ -48,7 +48,7 @@ The application covers the full ML lifecycle:
 
 | Form Input | Prediction Result |
 |:---:|:---:|
-| ![Form](screenshots/form.png) | ![Result](screenshots/result.png) |
+| ![Form](<img width="1919" height="967" alt="Image" src="https://github.com/user-attachments/assets/d766eabb-100c-4631-8c76-a030d49e0ce2" />) | ![Result](<img width="1916" height="971" alt="Image" src="https://github.com/user-attachments/assets/8461f4d7-6926-40f6-8652-22876e2ef3e1" />) |
 
 ---
 
