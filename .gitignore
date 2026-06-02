@@ -1,0 +1,98 @@
+# =====================
+#  PYTHON / BACKEND
+# =====================
+
+# Environnements virtuels
+venv/
+env/
+.env
+.venv/
+ENV/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Fichiers de build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Variables d'environnement sensibles
+.env
+.env.local
+
+# =====================
+#  NODE / FRONTEND
+# =====================
+
+# Dépendances (JAMAIS pusher ça)
+node_modules/
+
+# Build de production
+frontend/dist/
+frontend/build/
+
+# Cache Vite
+frontend/.vite/
+
+# Fichiers locaux ESLint / Prettier
+.eslintcache
+
+# =====================
+#  SYSTÈME
+# =====================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# =====================
+#  IDE / ÉDITEURS
+# =====================
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains (PyCharm, WebStorm...)
+.idea/
+*.iml
+
+# =====================
+#  ML / DATA
+# =====================
+
+# Dataset brut (trop lourd pour GitHub)
+*.csv
+
+# Modèles trop lourds (garde-les si < 100MB)
+# model.pkl
+# scaler.joblib
+
+# =====================
+#  DIVERS
+# =====================
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.swp
